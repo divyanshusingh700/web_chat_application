@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+
+		/>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ChatCord App</title>
+    <script src="	https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1><i class="fas fa-smile"></i> ChatCord</h1>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
+        </div>
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <div class ="options">
+            <button id="bold" type="button" class="format" ><i class="fa-solid fa-bold" aria-hidden="true"></i></button>
+            <button id="italic" type="button" class="format"><i class="fa-solid fa-italic" aria-hidden="true"></i></button>
+            <button id="strikethrough" type="button" class="format"><i class="fa-solid fa-strikethrough" aria-hidden="true"></i></button>
+            <i class="separator">|</i>
+            <!-- List -->
+            <button id="insertOrderedList" type="button" class="option-button"><div class="fa-solid fa-list-ol" aria-hidden="true"></div></button>
+            <button id="insertUnorderedList" type="button" class="option-button"><i class="fa-solid fa-list" aria-hidden="true"></i></button>
+            <i class="separator">|</i>
+            <!-- Link -->
+            <button id="createLink" type="button" class="adv-option-button"><i class="fa fa-link" aria-hidden="true"></i></button>
+            <!-- Alignment -->
+            <i class="separator">|</i>
+            <button id="justifyLeft" type="button" class="option-button align"><i class="fa-solid fa-align-left" aria-hidden="true"></i></button>
+            <button type="button" data-cmd="showCode" name ="active"><i class="fa fa-code" aria-hidden="true"></i></button>
+          </div>
+          <!-- onkeyup="myFunction()" -->
+
+          <input
+
+            contenteditable="true"
+            id="msg"
+            name="textField"
+            type="text"
+            placeholder="Chat comes here..."
+            required
+            autocomplete="off"
+          />
+          <!-- <p id="newMsg"></p> -->
+          <!-- <div id="msg" onkeyup="myFunction(this, event)" required type="text" placeholder="Chat comes here..." autocomplete="off" contenteditable="true"></div> -->
+          <!-- <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..." contenteditable="true"></textarea> -->
+          <!-- <pre id="highlighting" aria-hidden="true">
+            <code class="language-html" id="highlighting-content"></code>
+          </pre> -->
+          <div>
+            <input id="fileupload" type="file"  />
+            <button id="uploadButton">
+              <i class="fa fa-plus" aria-hidden="true" ></i>
+            </button>
+            <button id="emoji-button">
+              <i class="fa-solid fa-face-smile"></i>
+            </button>
+          </div>
+          <div class = "submit">
+            <button class="btnsend"><i class="fas fa-paper-plane"></i></button>
+          </div>
+          
+          </form>
+      </div>
+      <!-- <script src="js/script.js"></script> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+    <script  src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" 
+    integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+
+</html>
